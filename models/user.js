@@ -1,5 +1,5 @@
+import bcrypt from "bcrypt";
 import mongoose from "mongoose";
-// const bcrypt = require("bcrypt");
 
 // Define the Person schema
 const userSchema = new mongoose.Schema({
@@ -20,7 +20,7 @@ const userSchema = new mongoose.Schema({
   address: {
     type: String,
     required: true,
-  }, 
+  },
   aadharCardNumber: {
     type: Number,
     required: true,

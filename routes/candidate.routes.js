@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { generateToken, jwtAuthMiddleware } from "../jwt.js";
+import {jwtAuthMiddleware } from "../jwt.js";
 import { Candidate } from "../models/candidate.js";
 
 const router = Router();
@@ -91,8 +91,8 @@ router.get("/vote/:candidateID", jwtAuthMiddleware, async (req, res) => {
   // no admin can vote
   // user can only vote once
 
-  candidateID = req.params.candidateID;
-  userId = req.user.id;
+  const candidateID = req.params.candidateID;
+  const userId = req.user.id;
 
   try {
     // Find the Candidate document with the specified candidateID
