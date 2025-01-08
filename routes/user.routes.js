@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { generateToken, jwtAuthMiddleware } from "../auth/jwt.js";
+import { generateToken, jwtAuthMiddleware } from "../jwt.js";
 import { User } from "../models/user.js";
 
 const router = Router();
@@ -134,3 +134,5 @@ router.put("/profile/password", jwtAuthMiddleware, async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
+
+export default router;
